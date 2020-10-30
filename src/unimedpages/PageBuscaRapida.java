@@ -54,6 +54,16 @@ public class PageBuscaRapida {
 	public void botaoContinuar() {
 		WebDriverUtils.driver.findElement(By.xpath("/html/body/div[6]/div/div[3]/div/div/div/div/div/div/div/div/div/div/div/div/div[3]/button[2]")).click();
 	}
+	
+	public String obterEspecialidade() {
+		String text = WebDriverUtils.driver.findElement(By.xpath("/html/body/div[6]/div/div[3]/div/div/div/div/div/div/div/div/div/div/div[8]/div[1]/div[6]/div/div[2]/div[1]/p[2]/span[2]")).getText();
+		return text;
+	}
+	
+	public String obterCidade() {
+		String text = WebDriverUtils.driver.findElement(By.xpath("/html/body/div[6]/div/div[3]/div/div/div/div/div/div/div/div/div/div/div[8]/div[1]/div[1]/div/div[2]/div[1]/span/p[2]")).getText();
+		return text;
+	}
 
 
 }
