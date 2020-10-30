@@ -18,22 +18,42 @@ public class PageBuscaRapida {
 		WebDriverUtils.driver.findElement(By.id("btn_pesquisar")).click();
 	}
 	
+	
 	public void selecionarCampoEstado() {
-		WebDriverUtils.driver.findElement(By.xpath("/html/body/div[6]/div/div[3]/div/div/div/div/div/div/div/div/div/div/div/div/div[1]/form/div/div[1]/div/div/div[2]/div/svg")).click();
+		WebDriverUtils.driver.findElement(By.xpath("/html/body/div[6]/div/div[3]/div/div/div/div/div/div/div/div/div/div/div/div/div[1]/form/div/div[1]/div/div/div[1]")).click();
+	}                                           
+	
+	public void selecionarEstado() {
+		WebDriverUtils.driver.findElement(By.xpath("/html/body/div[6]/div/div[3]/div/div/div/div/div/div/div/div/div/div/div/div/div[1]/form/div/div[1]/div/div[2]/div/div[19]")).click();
 	}
 	
-	public void selecionarEstado(String estado) {
-		WebDriverUtils.driver.findElement(By.xpath("/html/body/div[6]/div/div[3]/div/div/div/div/div/div/div/div/div/div/div/div/div[1]/form/div/div[1]/div/div/div[1]/div[1]")).click();
-	}
-	
-	public void limparCampo() {
-		WebDriverUtils.driver.findElement(By.xpath("/html/body/div[6]/div/div[3]/div/div/div/div/div/div/div/div/div/div/div/div/div[1]/form/div/div[1]/div/div/div[2]/div[1]/svg")).click();
-	}
-	
-	public void campoEstado(String estado) {
-		limparCampo();
+	public void campoEstado() throws Throwable {
 		selecionarCampoEstado();
-		selecionarEstado(estado);
+		Thread.sleep(1000);
+		selecionarEstado();
 	}
+	
+	public void selecionarCampoCidade() {
+		WebDriverUtils.driver.findElement(By.xpath("/html/body/div[6]/div/div[3]/div/div/div/div/div/div/div/div/div/div/div/div/div[1]/form/div/div[2]/div[1]/div/div[1]")).click();
+	}
+	
+	public void selecionarCidade() {
+		WebDriverUtils.driver.findElement(By.xpath("/html/body/div[6]/div/div[3]/div/div/div/div/div/div/div/div/div/div/div/div/div[1]/form/div/div[2]/div/div[2]/div/div[68]")).click();
+	}      
+	
+	public void campoCidade() throws Throwable {
+		selecionarCampoCidade();
+		Thread.sleep(1000);
+		selecionarCidade();
+	}
+	
+	public void selecionarRadionButton() {
+		WebDriverUtils.driver.findElement(By.xpath("/html/body/div[6]/div/div[3]/div/div/div/div/div/div/div/div/div/div/div/div/div[2]/form/label/div[1]/input")).click();
+	}
+	
+	public void botaoContinuar() {
+		WebDriverUtils.driver.findElement(By.xpath("/html/body/div[6]/div/div[3]/div/div/div/div/div/div/div/div/div/div/div/div/div[3]/button[2]")).click();
+	}
+
 
 }

@@ -31,18 +31,23 @@ public class Testes {
 	@Test
 	public void testeCidadeEspecialidade() throws Throwable{
 		String DadoInseridoCampoPesquisa = "cardiologista";
-		String DadoInseridoCampoEstado = "Rio de Janeiro";
 		
 		pageAcessandoGuiaMedico.botaoGuiaMedico();
-		Thread.sleep(2000);
-		
+		Thread.sleep(1000);
 		pageBuscaRapida.campoPesquisa(DadoInseridoCampoPesquisa);
-		Thread.sleep(8000);
+		Thread.sleep(1000);
 		pageBuscaRapida.botaoPesquisar();
-		Thread.sleep(2000);
-
-		pageBuscaRapida.campoEstado(DadoInseridoCampoEstado);
+		Thread.sleep(1000);
+		pageBuscaRapida.campoEstado();
+		Thread.sleep(1000);
+		pageBuscaRapida.campoCidade();
+		Thread.sleep(1000);
+		pageBuscaRapida.selecionarRadionButton();
+		Thread.sleep(1000);
+		pageBuscaRapida.botaoContinuar();
 		Thread.sleep(6000);
+
+		
 
 	}
 	
