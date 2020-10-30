@@ -1,13 +1,16 @@
 package testspages;
 
+import java.util.List;
+
 import org.hamcrest.CoreMatchers;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 
+import sun.net.www.content.audio.x_aiff;
 import unimedpages.PageAcessandoGuiaMedico;
 import unimedpages.PageBuscaRapida;
 import utils.WebDriverUtils;
@@ -16,9 +19,6 @@ public class Testes {
 	
 	private static PageAcessandoGuiaMedico pageAcessandoGuiaMedico;
 	private static PageBuscaRapida pageBuscaRapida;
-	private static WebDriver drive;
-	private static Actions action;
-	
 	
 	@Before
 	public void precondicao() {
@@ -51,8 +51,21 @@ public class Testes {
 		pageBuscaRapida.botaoContinuar();
 		Thread.sleep(2000);
 		
-		Assert.assertEquals(DadoCampoPesquisa, pageBuscaRapida.obterEspecialidade());
-		Assert.assertThat(DadoCidade, CoreMatchers.containsString("Rio de Janeiro"));
+		
+		
+		List<WebElement> especialidades = WebDriverUtils.driver.findElements(By.className("DadosPrestador"));
+		for (int i = 0; i < especialidades.size(); i++) {
+			WebElement x = especialidades.get(i);
+			//System.out.println(x.getText());
+			
+			Assert.assertThat(x.getText(), CoreMatchers.containsString("Rio de Janeiro"));
+
+		}
+		
+		
+		
+		
+		//Assert.assertEquals(DadoCampoPesquisa, pageBuscaRapida.obterEspecialidade());
 
 	}
 	
