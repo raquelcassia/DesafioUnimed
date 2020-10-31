@@ -30,7 +30,7 @@ public class Testes {
 
 	}
 
-	@Test
+	/*@Test
 	public void testeCidadeEspecialidade() throws Throwable {
 		String DadoCampoPesquisa = "Cardiologia";
 
@@ -57,7 +57,7 @@ public class Testes {
 			// Assert.assertThat(x.getText(), containsString("Especialidade(s): Cardiologia"));
 
 		}
-	}
+	}*/
 
 	@Test
 
@@ -79,17 +79,16 @@ public class Testes {
 		pageBuscaRapida.botaoContinuar();
 		Thread.sleep(2000);
 
-		
-		
 		List<WebElement> resultadoBusca = WebDriverUtils.driver.findElements(By.className("DadosPrestador"));
 		for (int i = 0; i < resultadoBusca.size(); i++) {
 			WebElement x = resultadoBusca.get(i);
 
 			Assert.assertThat(x.getText(), not(containsString("- São Paulo / SP -")));
-			
-		
-
 		}
+		
+		Thread.sleep(1000);
+		pageBuscaRapida.botaoSetaProximo();
+		Thread.sleep(6000);
 	}
 
 	@After
