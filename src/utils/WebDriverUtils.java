@@ -53,11 +53,11 @@ public class WebDriverUtils {
 	public static void QuitChrome() {
 		driver.quit();
 	}
-	
+
 	public static void scrollView() {
 		WebElement element = pageBuscaRapida.botoesPag();
 		((JavascriptExecutor) WebDriverUtils.driver).executeScript("arguments[0].scrollIntoView(true);", element);
-		
+
 	}
 
 }

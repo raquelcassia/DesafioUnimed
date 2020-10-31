@@ -31,31 +31,35 @@ public class Testes {
 
 	}
 
-	/*
-	 * @Test public void testeCidadeEspecialidade() throws Throwable { String
-	 * DadoCampoPesquisa = "Cardiologia";
-	 * 
-	 * pageAcessandoGuiaMedico.botaoGuiaMedico(); Thread.sleep(1000);
-	 * pageBuscaRapida.campoPesquisa(DadoCampoPesquisa); Thread.sleep(1000);
-	 * pageBuscaRapida.botaoPesquisar(); Thread.sleep(1000);
-	 * pageBuscaRapida.campoEstado(); Thread.sleep(1000);
-	 * pageBuscaRapida.campoCidade(); Thread.sleep(1000);
-	 * pageBuscaRapida.selecionarRadionButton(); Thread.sleep(1000);
-	 * pageBuscaRapida.botaoContinuar(); Thread.sleep(2000);
-	 * 
-	 * List<WebElement> resultadoBusca =
-	 * WebDriverUtils.driver.findElements(By.className("DadosPrestador")); for (int
-	 * i = 0; i < resultadoBusca.size(); i++) { WebElement x =
-	 * resultadoBusca.get(i);
-	 * 
-	 * Assert.assertThat(x.getText(), containsString("- Rio de Janeiro / RJ -")); //
-	 * Assert.assertThat(x.getText(),
-	 * containsString("Especialidade(s): Cardiologia"));
-	 * 
-	 * } }
-	 */
+	@Test
+	public void testeCidadeEspecialidade() throws Throwable {
+		String DadoCampoPesquisa = "Cardiologia";
 
-	/*@Test
+		pageAcessandoGuiaMedico.botaoGuiaMedico();
+		Thread.sleep(1000);
+		pageBuscaRapida.campoPesquisa(DadoCampoPesquisa);
+		Thread.sleep(1000);
+		pageBuscaRapida.botaoPesquisar();
+		Thread.sleep(1000);
+		pageBuscaRapida.campoEstado();
+		Thread.sleep(1000);
+		pageBuscaRapida.campoCidade();
+		Thread.sleep(1000);
+		pageBuscaRapida.selecionarRadionButton();
+		Thread.sleep(1000);
+		pageBuscaRapida.botaoContinuar();
+		Thread.sleep(2000);
+
+		List<WebElement> resultadoBusca = WebDriverUtils.driver.findElements(By.className("DadosPrestador"));
+		for (int i = 0; i < resultadoBusca.size(); i++) {
+			WebElement x = resultadoBusca.get(i);
+
+			Assert.assertThat(x.getText(), containsString("- Rio de Janeiro / RJ -")); //
+			Assert.assertThat(x.getText(), containsString("Especialidade(s): Cardiologia"));
+		}
+	}
+
+	@Test
 
 	public void testeNotSP_SetaPg() throws Throwable {
 		String DadoCampoPesquisa = "Otorrinolaringologia";
@@ -88,7 +92,7 @@ public class Testes {
 			Thread.sleep(1000);
 			pageBuscaRapida.botaoSetaProximo();
 		}
-	}*/
+	}
 
 	@Test
 
@@ -118,23 +122,15 @@ public class Testes {
 				WebElement x = resultadoBusca.get(i);
 
 				Assert.assertThat(x.getText(), not(containsString("- São Paulo / SP -")));
-
 			}
-			
+
 			Thread.sleep(2000);
-			
 			WebDriverUtils.scrollView();
 			Thread.sleep(2000);
 			pageBuscaRapida.numPag(p);
 			Thread.sleep(1000);
-
-			
-
 		}
 	}
-	
-	
-	
 
 	@After
 	public void finish() throws Throwable {
