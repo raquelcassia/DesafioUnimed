@@ -1,6 +1,9 @@
 package unimedpages;
 
+
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+
 import utils.WebDriverUtils;
 
 public class PageBuscaRapida {
@@ -65,6 +68,22 @@ public class PageBuscaRapida {
 	
 	public void botaoSetaProximo() {
 		WebDriverUtils.driver.findElement(By.xpath("/html/body/div[6]/div/div[3]/div/div/div/div/div/div/div/div/div/div/div[8]/div[2]/div/ul/li[13]/a/i")).click();
+	}
+	
+	public WebElement botoesPag() {
+		return WebDriverUtils.driver.findElement(By.xpath("/html/body/div[6]/div/div[3]/div/div/div/div/div/div/div/div/div/div/div[8]/div[2]/div"));
+	}
+	
+	
+	public void numPag(int x) {
+		switch (x) {
+		case 0:
+			WebDriverUtils.driver.findElement(By.xpath("/html/body/div[6]/div/div[3]/div/div/div/div/div/div/div/div/div/div/div[8]/div[2]/div/ul/li[4]/a")).click();
+			break;
+		case 1:
+			WebDriverUtils.driver.findElement(By.xpath("/html/body/div[6]/div/div[3]/div/div/div/div/div/div/div/div/div/div/div[8]/div[2]/div/ul/li[5]")).click();
+			break;
+		}
 	}
 	
 	

@@ -48,5 +48,7 @@ public class WebDriverUtils {
 	public static void QuitChrome() {
 		driver.quit();
 	}
+	
+	
 
 }
