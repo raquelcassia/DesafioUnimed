@@ -123,8 +123,7 @@ public class Testes {
 			
 			Thread.sleep(2000);
 			
-			WebElement element = pageBuscaRapida.botoesPag();
-			((JavascriptExecutor) WebDriverUtils.driver).executeScript("arguments[0].scrollIntoView(true);", element);
+			WebDriverUtils.scrollView();
 			Thread.sleep(2000);
 			pageBuscaRapida.numPag(p);
 			Thread.sleep(1000);
