@@ -78,17 +78,23 @@ public class Testes {
 		Thread.sleep(1000);
 		pageBuscaRapida.botaoContinuar();
 		Thread.sleep(2000);
+		
+		List<WebElement> resultadoBusca;
+		for (int p = 1; p <= 3; p++) {
+			
+			resultadoBusca = WebDriverUtils.driver.findElements(By.className("DadosPrestador"));
+			for (int i = 0; i < resultadoBusca.size(); i++) {
+				WebElement x = resultadoBusca.get(i);
 
-		List<WebElement> resultadoBusca = WebDriverUtils.driver.findElements(By.className("DadosPrestador"));
-		for (int i = 0; i < resultadoBusca.size(); i++) {
-			WebElement x = resultadoBusca.get(i);
-
-			Assert.assertThat(x.getText(), not(containsString("- São Paulo / SP -")));
+				Assert.assertThat(x.getText(), not(containsString("- São Paulo / SP -")));
+			}
+			
+			Thread.sleep(1000);
+			pageBuscaRapida.botaoSetaProximo();
 		}
 		
-		Thread.sleep(1000);
-		pageBuscaRapida.botaoSetaProximo();
-		Thread.sleep(6000);
+		
+		
 	}
 
 	@After

@@ -66,6 +66,8 @@ public class PageBuscaRapida {
 	public void botaoSetaProximo() {
 		WebDriverUtils.driver.findElement(By.xpath("/html/body/div[6]/div/div[3]/div/div/div/div/div/div/div/div/div/div/div[8]/div[2]/div/ul/li[13]/a/i")).click();
 	}
+	
+	
 
 
 }
