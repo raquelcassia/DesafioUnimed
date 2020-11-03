@@ -30,9 +30,37 @@ public class Testes {
 		pageBuscaRapida = new PageBuscaRapida();
 
 	}
-
+	
 	@Test
 	public void testeCidadeEspecialidade() throws Throwable {
+		String DadoCampoPesquisa = "Dermatologia";
+
+		pageAcessandoGuiaMedico.botaoGuiaMedico();
+		//Thread.sleep(1000);
+		pageBuscaRapida.campoPesquisa(DadoCampoPesquisa);
+		//Thread.sleep(1000);
+		pageBuscaRapida.botaoPesquisar();
+		//Thread.sleep(1000);
+		pageBuscaRapida.campoEstado();
+		//Thread.sleep(1000);
+		pageBuscaRapida.campoCidade();
+		//Thread.sleep(1000);
+		pageBuscaRapida.selecionarRadionButton();
+		//Thread.sleep(1000);
+		pageBuscaRapida.botaoContinuar();
+		//Thread.sleep(2000);
+
+		List<WebElement> resultadoBusca = WebDriverUtils.driver.findElements(By.className("DadosPrestador"));
+		for (int i = 0; i < resultadoBusca.size(); i++) {
+			WebElement x = resultadoBusca.get(i);
+
+			Assert.assertThat(x.getText(), containsString("- Rio de Janeiro / RJ -")); //
+			Assert.assertThat(x.getText(), containsString("Especialidade(s): Dermatologia"));
+		}
+	}
+
+	@Test
+	public void testeCidadeEspecialidadeError() throws Throwable {
 		String DadoCampoPesquisa = "Cardiologia";
 
 		pageAcessandoGuiaMedico.botaoGuiaMedico();
@@ -55,7 +83,7 @@ public class Testes {
 			WebElement x = resultadoBusca.get(i);
 
 			Assert.assertThat(x.getText(), containsString("- Rio de Janeiro / RJ -")); //
-			//Assert.assertThat(x.getText(), containsString("Especialidade(s): Cardiologia"));
+			Assert.assertThat(x.getText(), containsString("Especialidade(s): Cardiologia"));
 		}
 	}
 
