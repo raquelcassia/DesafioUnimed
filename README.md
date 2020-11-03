@@ -33,6 +33,17 @@ preferência os cenários para as duas funcionalidades abaixo:
 
 ---
 
+## Casos de Teste
+
+```
+1. Validação da apresentação dos resultados com a Especialidade e Cidade.
+2. Validação da apresentação dos resultados com a Especialidade e Cidade (bug).
+3. Validação da não apresentação de resultados com cidade SP ao pesquisar por Rio de janeiro nas 1ª, 2ª e 3ª paginas, navegando pelas setas.
+4. Validação da não apresentação de resultados com cidade SP ao pesquisar por Rio de janeiro nas 1ª, 2ª e 3ª paginas, navegando pela numeração.
+
+```
+---
+
 ## Requisitos
 
 - [JDK install +8](https://www.oracle.com/technetwork/java/javase/downloads/index.html)
