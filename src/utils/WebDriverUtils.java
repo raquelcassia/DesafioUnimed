@@ -8,7 +8,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.remote.DesiredCapabilities;
 
 import unimedpages.PageBuscaRapida;
 
@@ -36,25 +35,13 @@ public class WebDriverUtils {
 		options.addArguments("start-maximized");
 		options.addArguments("--disable-geolocation");
 
-		//driver = new ChromeDriver(options);
-		
-		options.addArguments("start-maximized");
-		options.addArguments("test-type");
-		options.addArguments("enable-strict-powerful-feature-restrictions");
-		options.addArguments("disable-geolocation");
-
-		DesiredCapabilities cap = new DesiredCapabilities();
-
-		cap.setCapability(ChromeOptions.CAPABILITY, options);
-		cap = cap.merge(DesiredCapabilities.chrome());
-		driver = new ChromeDriver(cap);
-		
+		driver = new ChromeDriver(options);
 		action = new Actions(WebDriverUtils.driver);
 
 	}
 
 	public static void IniciandoDriver() {
-		driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		driver.get("https://www.unimed.coop.br/");
 	}
 
