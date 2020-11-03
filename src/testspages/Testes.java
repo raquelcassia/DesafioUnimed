@@ -61,7 +61,7 @@ public class Testes {
 
 	@Test
 	public void testeCidadeEspecialidadeError() throws Throwable {
-		String DadoCampoPesquisa = "Cardiologia";
+		String DadoCampoPesquisa = "Angiologia";
 
 		pageAcessandoGuiaMedico.botaoGuiaMedico();
 		//Thread.sleep(1000);
@@ -83,7 +83,7 @@ public class Testes {
 			WebElement x = resultadoBusca.get(i);
 
 			Assert.assertThat(x.getText(), containsString("- Rio de Janeiro / RJ -")); //
-			Assert.assertThat(x.getText(), containsString("Especialidade(s): Cardiologia"));
+			Assert.assertThat(x.getText(), containsString("Especialidade(s): Angiologia"));
 		}
 	}
 
